@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IRO - Issues Reporting Outlet</title>
+    <link rel="stylesheet" href="STYLE.CSS" />
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">📢 IRO</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#report">Report Issue</a></li>
+                <li><a href="#track">Track</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <h1>Report Issues Affecting AAUA Community</h1>
+            <p>Akungba • Iwaro • Etioro • Ayegunle</p>
+            <a href="#report" class="btn-primary">Report Now</a>
+        </section>
+
+        <section id="report" class="form-section">
+            <h2>Submit an Issue</h2>
+            <form id="issueForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" required />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required />
+                </div>
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select id="category" required>
+                        <option value="">Select...</option>
+                        <option value="infrastructure">Infrastructure</option>
+                        <option value="security">Security</option>
+                        <option value="academic">Academic</option>
+                        <option value="health">Health</option>
+                        <option value="environmental">Environmental</option>
+                        <option value="transportation">Transportation</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" placeholder="e.g., Akungba, Iwaro..." required />
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" rows="5" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="severity">Severity (1-5)</label>
+                    <input type="range" id="severity" min="1" max="5" value="3" />
+                    <span id="severityLabel">3</span>
+                </div>
+                <button type="submit" class="btn-primary">Submit Issue</button>
+            </form>
+            <div id="formFeedback"></div>
+        </section>
+
+        <section id="track" class="track-section">
+            <h2>Track Your Issue</h2>
+            <input type="text" id="trackId" placeholder="Enter Issue ID" />
+            <button onclick="trackIssue()" class="btn-secondary">Track</button>
+            <div id="trackResult"></div>
+        </section>
+
+        <section id="dashboard" class="dashboard">
+            <h2>Community Dashboard</h2>
+            <div class="stats">
+                <div class="stat-card"><span id="totalIssues">0</span> Total Issues</div>
+                <div class="stat-card"><span id="resolvedIssues">0</span> Resolved</div>
+                <div class="stat-card"><span id="pendingIssues">0</span> Pending</div>
+            </div>
+            <div id="recentIssues"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 IRO - Issues Reporting Outlet for AAUA Community</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IRO - Issues Reporting Outlet</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">📢 IRO</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#report">Report Issue</a></li>
+                <li><a href="#track">Track</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <h1>Report Issues Affecting AAUA Community</h1>
+            <p>Akungba • Iwaro • Etioro • Ayegunle</p>
+            <a href="#report" class="btn-primary">Report Now</a>
+        </section>
+
+        <section id="report" class="form-section">
+            <h2>Submit an Issue</h2>
+            <form id="issueForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" required />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required />
+                </div>
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select id="category" required>
+                        <option value="">Select...</option>
+                        <option value="infrastructure">Infrastructure</option>
+                        <option value="security">Security</option>
+                        <option value="academic">Academic</option>
+                        <option value="health">Health</option>
+                        <option value="environmental">Environmental</option>
+                        <option value="transportation">Transportation</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" placeholder="e.g., Akungba, Iwaro..." required />
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" rows="5" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="severity">Severity (1-5)</label>
+                    <input type="range" id="severity" min="1" max="5" value="3" />
+                    <span id="severityLabel">3</span>
+                </div>
+                <button type="submit" class="btn-primary">Submit Issue</button>
+            </form>
+            <div id="formFeedback"></div>
+        </section>
+
+        <section id="track" class="track-section">
+            <h2>Track Your Issue</h2>
+            <input type="text" id="trackId" placeholder="Enter Issue ID" />
+            <button onclick="trackIssue()" class="btn-secondary">Track</button>
+            <div id="trackResult"></div>
+        </section>
+
+        <section id="dashboard" class="dashboard">
+            <h2>Community Dashboard</h2>
+            <div class="stats">
+                <div class="stat-card"><span id="totalIssues">0</span> Total Issues</div>
+                <div class="stat-card"><span id="resolvedIssues">0</span> Resolved</div>
+                <div class="stat-card"><span id="pendingIssues">0</span> Pending</div>
+            </div>
+            <div id="recentIssues"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 IRO - Issues Reporting Outlet for AAUA Community</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
